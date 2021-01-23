@@ -4,22 +4,23 @@ from inteiros.validators import InteiroValidator
 
 
 class InteiroService():
-    def list(self, usuario):
-        pass
-
-    def single(self, pk):
-        pass
-
-    def get(self, pk):
-        pass
+    def list(self):
+        return Inteiro.objects.all().order_by('pk')
 
     def create(self, data):
-
         data = InteiroValidator.validate(self, data)
 
         instance = Inteiro.objects.create(**data)
 
         return instance
+
+    def single(self):
+        return self.list()
+
+    def get(self, pk=None):
+        if pk is None:
+            raise Exception("Não foi possível recuperar o objeto.")
+        return self.single().get(pk=pk)
 
     def update(self, instance, data, user):
         pass
