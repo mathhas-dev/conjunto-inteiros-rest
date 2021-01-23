@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 
-class valida_inteiro_post():
+class InteiroValidator():
     """
     Classe para validação, atendimento as regras estabeleciddas no enunciado
     """

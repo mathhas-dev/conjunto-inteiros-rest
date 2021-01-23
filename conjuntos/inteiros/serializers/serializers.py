@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Inteiro
+from inteiros.models import Inteiro
 
 
 class InteiroSerializer(serializers.ModelSerializer):
